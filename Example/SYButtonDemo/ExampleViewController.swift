@@ -161,9 +161,6 @@ class ExampleViewController: UIViewController {
         gradientButton.backgroundView.layer.shadowOffset = CGSize(width: 2, height: 2)
         gradientButton.highlighter = SYScaleHighlighter()
         gradientButton.cornerRadius = .rounded
-
-        gradientButton.isHidden = true
-        alignedButton.isHidden = true
     }
 
     private func setupNavigationBar() {

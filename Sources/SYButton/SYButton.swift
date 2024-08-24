@@ -179,7 +179,7 @@ open class SYButton: UIControl {
         contentStackView.alignment = .center
         contentStackView.axis = .horizontal
         contentStackView.spacing = 4
-        contentStackView.distribution = .fillProportionally
+        contentStackView.distribution = .fill
 
         labelStackView.axis = .vertical
         labelStackView.distribution = .fillProportionally
