@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WXC-Qj-Nd6">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Example View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ExampleViewController" customModule="SYButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-5v-yAE">
+                                <rect key="frame" x="0.0" y="103" width="393" height="670"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="XSO-yL-5au" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="10N-kZ-bgQ" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="62" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="sO5-CV-pGM" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="124" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-95-Isj" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="186" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="jMO-Ie-tt2" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="248" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-Nx-keD" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="310" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="AfZ-Ex-DzC" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="372" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="5rc-fb-0b9" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="434" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-Sz-aHN" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="496" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="liJ-zC-Zry" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="558" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="22s-kC-wUw" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="620" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MbD-5v-yAE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0QX-jF-8tH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MbD-5v-yAE" secondAttribute="bottom" id="PwJ-6L-klT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MbD-5v-yAE" secondAttribute="trailing" id="aGX-Pv-Ofu"/>
+                            <constraint firstItem="MbD-5v-yAE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="syv-XM-0de"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EuQ-qx-BQo"/>
+                    <connections>
+                        <outlet property="alignedButton" destination="liJ-zC-Zry" id="fHf-Or-yQb"/>
+                        <outlet property="contentStackview" destination="MbD-5v-yAE" id="xgU-Ns-BhG"/>
+                        <outlet property="customHighlighterButton" destination="jMO-Ie-tt2" id="4IB-Zv-tE9"/>
+                        <outlet property="githubButton" destination="5rc-fb-0b9" id="7X2-P7-Y2s"/>
+                        <outlet property="gradientButton" destination="22s-kC-wUw" id="AWB-Ro-anS"/>
+                        <outlet property="highlightedButton" destination="sO5-CV-pGM" id="plT-HT-H8P"/>
+                        <outlet property="iconButton" destination="RXJ-Nx-keD" id="nqR-48-hvv"/>
+                        <outlet property="rippleButton" destination="J9d-95-Isj" id="0zs-Ai-T9d"/>
+                        <outlet property="rotatingButton" destination="Xc2-Sz-aHN" id="hNA-u8-5u4"/>
+                        <outlet property="signUpButton" destination="AfZ-Ex-DzC" id="mW0-aH-SCG"/>
+                        <outlet property="simpleButton" destination="XSO-yL-5au" id="Id9-MO-VQT"/>
+                        <outlet property="simpleButtonSubtitle" destination="10N-kZ-bgQ" id="zvb-L9-cbG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063.3587786259541" y="4.9295774647887329"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IgE-Am-gf3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WXC-Qj-Nd6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nrq-Ob-DMY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Nxn-ik-OMR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CrM-HM-ZQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="4.9295774647887329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
