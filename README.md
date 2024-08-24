@@ -12,15 +12,6 @@ SYButton is a yet another simple but customizable and button. With support for d
 <img src="./docs/overview.png" alt="Overview">
 </div>
 
-## Features
-
-- **Customizable Design**: Easily adjust colors, fonts, corner radii, and more to create buttons that match your app’s style.
-- **Loading State Support**: Built-in loading indicators to show users that a process is in progress.
-- **Highlighter Effects**: Add touch feedback effects like scale, ripple, and more.
-- **Accessibility Ready**: Fully supports accessibility features, ensuring a great user experience for all.
-- **Flexible Content Alignment**: Control the positioning of icons and text within the button.
-
-
 ## Usage
 #### Basic Usage
 
