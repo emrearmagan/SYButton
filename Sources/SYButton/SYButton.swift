@@ -22,7 +22,7 @@ open class SYButton: UIControl {
     private let imageView = UIImageView()
 
     /// A view representing the main content area of the button. Including the title, subtitle and icon
-    public let contentBackgroundView = UIView()
+    public let contentBackgroundView = SYButtonBackgroundView()
 
     /// A view representing the background of the button, supporting gradients and other visual effects.
     public let backgroundView = SYButtonBackgroundView()
@@ -106,10 +106,9 @@ open class SYButton: UIControl {
     open var feedback: Feedback?
 
     /// Corner radius setting for the button.
-    open var cornerRadius: CornerRadius = .radius(0) {
-        didSet {
-            setupBorder()
-        }
+    open var cornerRadius: SYButtonBackgroundView.CornerRadius {
+        get { backgroundView.cornerRadius }
+        set { backgroundView.cornerRadius = newValue }
     }
 
     /// Placement of the icon relative to the title.
@@ -148,11 +147,7 @@ open class SYButton: UIControl {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-
-        setupBorder()
         updateViews()
-
-        backgroundView.frame = bounds
     }
 
     // MARK: Functions
@@ -218,8 +213,6 @@ open class SYButton: UIControl {
         imageView.isHidden = icon.image == nil && !isLoading
         imageView.image = icon.image?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = icon.tintColor
-
-        setupBorder()
     }
 
     /// Toggles the button's loading state, updates the title as needed.
@@ -418,16 +411,6 @@ extension SYButton {
 
         // Activate the constraints
         NSLayoutConstraint.activate(contentConstraints)
-    }
-
-    private func setupBorder() {
-        switch cornerRadius {
-        case .rounded:
-            backgroundView.layer.cornerRadius = 0.5 * backgroundView.frame.size.height
-
-        case let .radius(value):
-            backgroundView.layer.cornerRadius = value
-        }
     }
 }
 

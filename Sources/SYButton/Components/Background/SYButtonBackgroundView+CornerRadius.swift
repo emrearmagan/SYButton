@@ -1,5 +1,5 @@
 //
-//  SYButton+CornerRadius.swift
+//  SYButtonBackgroundView+CornerRadius.swift
 //
 //
 //  Created by Emre Armagan on 22.08.24.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension SYButton {
+extension SYButtonBackgroundView {
     /// `CornerRadius` defines the rounding behavior for the corners of the `SYButton`.
     public enum CornerRadius {
         /// Rounds the button corners to form a capsule shape based on the button's height.

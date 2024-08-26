@@ -19,6 +19,13 @@ public class SYButtonBackgroundView: UIView {
         }
     }
 
+    /// Corner radius setting of the view.
+    open var cornerRadius: SYButtonBackgroundView.CornerRadius = .radius(0) {
+        didSet {
+            self.setupBorder()
+        }
+    }
+
     /// The direction of the gradient. The default is `.leftToRight`.
     public var gradientDirection: GradientDirection = .leftToRight
 
@@ -39,6 +46,7 @@ public class SYButtonBackgroundView: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
+        self.setupBorder()
         if self.gradienLayer != nil {
             self.gradienLayer?.frame = self.bounds
             self.gradienLayer?.cornerRadius = self.layer.cornerRadius
@@ -50,11 +58,21 @@ public class SYButtonBackgroundView: UIView {
             self.gradienLayer = SYGradientLayer()
             self.gradienLayer!.bounds = self.frame
 
-            self.layer.insertSublayer(self.gradienLayer!, at: 0)
+            layer.insertSublayer(self.gradienLayer!, at: 0)
         }
 
         self.gradienLayer!.gradientColors = self.gradientColor
         self.gradienLayer!.gradientDirection = self.gradientDirection
         self.gradienLayer!.gradientLocations = self.gradientLocations
+    }
+
+    private func setupBorder() {
+        switch self.cornerRadius {
+        case .rounded:
+            layer.cornerRadius = 0.5 * frame.size.height
+
+        case let .radius(value):
+            layer.cornerRadius = value
+        }
     }
 }
