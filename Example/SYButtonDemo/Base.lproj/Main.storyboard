@@ -17,50 +17,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="MbD-5v-yAE">
-                                <rect key="frame" x="0.0" y="103" width="393" height="670"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="XSO-yL-5au" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="XSO-yL-5au" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="33"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="10N-kZ-bgQ" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="62" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="10N-kZ-bgQ" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="45" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="sO5-CV-pGM" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="124" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="sO5-CV-pGM" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="107" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-95-Isj" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="186" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-95-Isj" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="169" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="jMO-Ie-tt2" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="248" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="jMO-Ie-tt2" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="231" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-Nx-keD" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="310" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="RXJ-Nx-keD" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="293" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="AfZ-Ex-DzC" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="372" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="hem-Qf-aey" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="355" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="5rc-fb-0b9" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="434" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="AfZ-Ex-DzC" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="417" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-Sz-aHN" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="496" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="5rc-fb-0b9" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="479" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="liJ-zC-Zry" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="558" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-Sz-aHN" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="541" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="22s-kC-wUw" customClass="SYButton" customModule="SYButton">
-                                        <rect key="frame" x="0.0" y="620" width="393" height="50"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="liJ-zC-Zry" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="603" width="393" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="22s-kC-wUw" customClass="SYButton" customModule="SYButton">
+                                        <rect key="frame" x="0.0" y="665" width="393" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -84,6 +88,7 @@
                         <outlet property="gradientButton" destination="22s-kC-wUw" id="AWB-Ro-anS"/>
                         <outlet property="highlightedButton" destination="sO5-CV-pGM" id="plT-HT-H8P"/>
                         <outlet property="iconButton" destination="RXJ-Nx-keD" id="nqR-48-hvv"/>
+                        <outlet property="powerButton" destination="hem-Qf-aey" id="lh4-ml-srk"/>
                         <outlet property="rippleButton" destination="J9d-95-Isj" id="0zs-Ai-T9d"/>
                         <outlet property="rotatingButton" destination="Xc2-Sz-aHN" id="hNA-u8-5u4"/>
                         <outlet property="signUpButton" destination="AfZ-Ex-DzC" id="mW0-aH-SCG"/>

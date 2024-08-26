@@ -22,6 +22,7 @@ class ExampleViewController: UIViewController {
     @IBOutlet weak var iconButton: SYButton!
     @IBOutlet weak var signUpButton: SYButton!
     @IBOutlet weak var githubButton: SYButton!
+    @IBOutlet weak var powerButton: SYButton!
 
     @IBOutlet weak var rotatingButton: SYButton!
     @IBOutlet weak var alignedButton: SYButton!
@@ -29,7 +30,7 @@ class ExampleViewController: UIViewController {
 
     // Array containing the buttons that should have no title while loading
     private lazy var noTitleButton = [
-        iconButton, githubButton
+        iconButton, powerButton, githubButton, signUpButton
     ]
 
     override func viewDidLoad() {
@@ -79,7 +80,7 @@ class ExampleViewController: UIViewController {
         customHighlighterButton.cornerRadius = .rounded
 
         customHighlighterButton.contentBackgroundView.backgroundColor = .white.withAlphaComponent(0.3)
-        customHighlighterButton.contentBackgroundView.layer.cornerRadius = 5
+        customHighlighterButton.contentBackgroundView.cornerRadius = .radius(5)
         customHighlighterButton.contentBackgroundView.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         customHighlighterButton.icon = .init(image: .init(systemName: "camera.fill"), tintColor: .white)
         customHighlighterButton.highlighter = CustomHighlighter()
@@ -93,7 +94,7 @@ class ExampleViewController: UIViewController {
         signUpButton.icon = .init(image: .init(systemName: "person.fill"), tintColor: .white)
         signUpButton.activityIndicator = SYBallPulseIndicator()
 
-        githubButton.title = "Github"
+        githubButton.title = "GitHub"
         githubButton.textColor = .white
         githubButton.backgroundColor = .black
         githubButton.cornerRadius = .rounded
@@ -126,6 +127,17 @@ class ExampleViewController: UIViewController {
         iconButton.textColor = .white
         iconButton.cornerRadius = .rounded
         iconButton.icon = .init(image: .init(systemName: "checkmark.circle.fill"), tintColor: .white)
+
+        powerButton.icon = .init(image: .init(systemName: "power"),
+                                 size: .init(width: 40, height: 40),
+                                 tintColor: .systemBlue)
+        powerButton.cornerRadius = .radius(10)
+        powerButton.activityIndicator.indicatorColor = .black
+        powerButton.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        powerButton.contentBackgroundView.cornerRadius = .radius(10)
+        powerButton.contentBackgroundView.layoutMargins = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+        powerButton.contentBackgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        powerButton.backgroundColor = .systemBlue
 
         alignedButton.title = "Aligned Button"
         alignedButton.textColor = .white
