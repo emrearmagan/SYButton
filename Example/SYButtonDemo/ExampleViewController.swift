@@ -200,13 +200,14 @@ private class CustomHighlighter: NSObject, SYButtonHighlighter, CAAnimationDeleg
         guard !highlighted else { return }
 
         highlighted = true
-        let convertedFrame = button.contentBackgroundView.convert(button.contentBackgroundView.bounds, to: button)
 
+        let convertedFrame = button.contentBackgroundView.convert(button.contentBackgroundView.bounds, to: button)
         let overlayView = UIView(frame: convertedFrame)
-        overlayView.backgroundColor = button.contentBackgroundView.backgroundColor
+        overlayView.backgroundColor = .white.withAlphaComponent(0.3)
         overlayView.layer.cornerRadius = button.contentBackgroundView.layer.cornerRadius
         overlayView.isUserInteractionEnabled = false
 
+        self.overlayView?.removeFromSuperview()
         self.overlayView = overlayView
         button.insertSubview(overlayView, belowSubview: button.contentBackgroundView)
         button.contentBackgroundView.backgroundColor = .clear
@@ -221,19 +222,17 @@ private class CustomHighlighter: NSObject, SYButtonHighlighter, CAAnimationDeleg
 
     func stopHighlight(_ button: SYButton) {
         guard highlighted else { return }
-
         highlighted = false
-        guard let overlayView = overlayView else { return }
 
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
-            overlayView.transform = .identity
-        }, completion: { _ in
-            guard !self.highlighted else { return }
-            button.contentBackgroundView.backgroundColor = overlayView.backgroundColor
+            self.overlayView?.transform = .identity
+        }, completion: { [weak self] _ in
+            guard self?.highlighted == false else { return }
+            button.contentBackgroundView.backgroundColor = .white.withAlphaComponent(0.3)
 
             // Remove the overlay view after the animation is completed
-            overlayView.removeFromSuperview()
-            self.overlayView = nil
+            self?.overlayView?.removeFromSuperview()
+            self?.overlayView = nil
         })
     }
 }
