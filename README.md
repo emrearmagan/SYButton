@@ -1,4 +1,8 @@
+<div>
+<img align="right" width="50" height="50" src="./docs/AppIcon.png" alt="project app icon">
+
 # SYButton
+</div>
 
 ![Platform](https://img.shields.io/badge/platform-ios-lightgray.svg)
 ![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)
