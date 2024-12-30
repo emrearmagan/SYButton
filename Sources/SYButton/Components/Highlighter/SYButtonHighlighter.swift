@@ -47,6 +47,7 @@ public protocol SYButtonHighlighter {
 }
 
 extension SYButtonHighlighter {
-    /// Provides a default implementation for the `locationMoved(_:to:)` method.
+    /// Default implementation for `locationMoved(_:)`.
+    /// Does nothing unless overridden.
     public func locationMoved(_ button: SYButton, to location: CGPoint) {}
 }

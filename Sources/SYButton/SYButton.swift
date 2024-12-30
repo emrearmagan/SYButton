@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/// A customizable button that supports images, subtitles, loading indicators, and
+/// various highlight effects. `SYButton` can display an icon in several placements
+/// relative to the title, apply gradient backgrounds, and handle loading states with ease.
 open class SYButton: UIControl {
     // MARK: Properties
 
@@ -20,12 +23,6 @@ open class SYButton: UIControl {
     private let _titleLabel = UILabel()
     private let _subtitle = UILabel()
     private let imageView = UIImageView()
-
-    /// A view representing the main content area of the button. Including the title, subtitle and icon
-    public let contentBackgroundView = SYButtonBackgroundView()
-
-    /// A view representing the background of the button, supporting gradients and other visual effects.
-    public let backgroundView = SYButtonBackgroundView()
 
     /// Caches the button's title and subtitle when loading is active.
     private var (cachedTitle, cachedSubtitle): (String?, String?)
@@ -43,6 +40,12 @@ open class SYButton: UIControl {
     }
 
     // MARK: Public Properties
+
+    /// A view representing the main content area of the button. Including the title, subtitle and icon
+    public let contentBackgroundView = SYButtonBackgroundView()
+
+    /// A view representing the background of the button, supporting gradients and other visual effects.
+    public let backgroundView = SYButtonBackgroundView()
 
     override open var isSelected: Bool {
         didSet { updateHandler?(self) }
@@ -205,6 +208,7 @@ open class SYButton: UIControl {
         imageView.accessibilityIdentifier = "iconView"
     }
 
+    /// Updates visibility of labels/icons based on the current state (loading, icon, text).
     private func updateViews() {
         titleLabel.isHidden = title == nil
         subtitleLabel.isHidden = subtitleLabel.text == nil
@@ -215,7 +219,8 @@ open class SYButton: UIControl {
         imageView.tintColor = icon.tintColor
     }
 
-    /// Toggles the button's loading state, updates the title as needed.
+    /// Toggles the loading state of the button, optionally displaying a custom loading title and disabling user interaction.
+    ///
     /// - Parameters:
     ///   - loading: A Boolean value indicating whether the button is in the loading state.
     ///   - title: An optional title to display while loading. If `nil`, the current title is used.
@@ -243,16 +248,17 @@ open class SYButton: UIControl {
 
         // Adjust the axis of the stack view and insert the icon at the correct position
         switch imagePlacement {
-        case .leading, .trailing:
-            contentStackView.axis = .horizontal
-            contentStackView.insertArrangedSubview(currentIcon, at: imagePlacement == .leading ? 0 : 1)
+            case .leading, .trailing:
+                contentStackView.axis = .horizontal
+                contentStackView.insertArrangedSubview(currentIcon, at: imagePlacement == .leading ? 0 : 1)
 
-        case .bottom, .top:
-            contentStackView.axis = .vertical
-            contentStackView.insertArrangedSubview(currentIcon, at: imagePlacement == .top ? 0 : 1)
+            case .bottom, .top:
+                contentStackView.axis = .vertical
+                contentStackView.insertArrangedSubview(currentIcon, at: imagePlacement == .top ? 0 : 1)
         }
     }
 
+    /// Replaces the icon with a spinner and updates the title while loading.
     private func showLoading(with title: String?, animationDuration: Double) {
         cachedTitle = titleLabel.text // cache title before animation starts
         cachedSubtitle = subtitleLabel.text // cache subtitle before animation starts
@@ -323,17 +329,17 @@ open class SYButton: UIControl {
     /// Handler for button press actions.
     @objc private func tapped(_ sender: SYButton) {
         switch feedback {
-        case .selectionChanged:
-            UISelectionFeedbackGenerator().selectionChanged()
+            case .selectionChanged:
+                UISelectionFeedbackGenerator().selectionChanged()
 
-        case let .impact(style):
-            UIImpactFeedbackGenerator(style: style).impactOccurred()
+            case let .impact(style):
+                UIImpactFeedbackGenerator(style: style).impactOccurred()
 
-        case let .notification(style):
-            UINotificationFeedbackGenerator().notificationOccurred(style)
+            case let .notification(style):
+                UINotificationFeedbackGenerator().notificationOccurred(style)
 
-        case nil:
-            break
+            case nil:
+                break
         }
 
         sender.sendActions(for: .primaryActionTriggered)
@@ -398,7 +404,7 @@ extension SYButton {
             outerStackView.leadingAnchor.constraint(equalTo: contentBackgroundView.layoutMarginsGuide.leadingAnchor),
             outerStackView.trailingAnchor.constraint(equalTo: contentBackgroundView.layoutMarginsGuide.trailingAnchor),
             outerStackView.topAnchor.constraint(equalTo: contentBackgroundView.layoutMarginsGuide.topAnchor),
-            outerStackView.bottomAnchor.constraint(equalTo: contentBackgroundView.layoutMarginsGuide.bottomAnchor),
+            outerStackView.bottomAnchor.constraint(equalTo: contentBackgroundView.layoutMarginsGuide.bottomAnchor)
         ]
 
         // Add icon size constraints with high priority

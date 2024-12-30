@@ -33,7 +33,10 @@ public class SYScaleHighlighter: SYButtonHighlighter {
     // MARK: Init
 
     public convenience init() {
-        self.init(tracklocation: false, animationScale: 0.95, animationDuration: 0.2, highlightedAlpha: 0.8)
+        self.init(tracklocation: false,
+                  animationScale: 0.95,
+                  animationDuration: 0.2,
+                  highlightedAlpha: 0.8)
     }
 
     /// Initializes a new instance of `SYScaleHighlighter` with the specified properties.

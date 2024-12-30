@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// A loading indicator view with three pulsing balls, typically used inside an `SYButton`.
 open class SYBallPulseIndicator: UIView, SYLoadingIndicator {
     // MARK: Properties
 
@@ -23,10 +24,12 @@ open class SYBallPulseIndicator: UIView, SYLoadingIndicator {
     /// begin times for each indicator
     private let beginTimes = [0.35, 0, 0.35]
 
+    /// Flag indicating whether the indicator is currently animating
     public var isAnimating: Bool {
         return _isAnimating
     }
 
+    ///  The color of all the pulsing indicators. Defaults to `.white`.
     public var indicatorColor: UIColor = .white {
         didSet {
             indicators.forEach { $0.fillColor = indicatorColor.cgColor }
@@ -41,7 +44,7 @@ open class SYBallPulseIndicator: UIView, SYLoadingIndicator {
 
     convenience init(color: UIColor) {
         self.init(frame: .zero)
-        self.indicatorColor = color
+        indicatorColor = color
     }
 
     override public init(frame: CGRect) {
@@ -56,7 +59,7 @@ open class SYBallPulseIndicator: UIView, SYLoadingIndicator {
         setupUI()
     }
 
-    // MARK: Functions
+    // MARK: Lifecycle
 
     override public func layoutSubviews() {
         super.layoutSubviews()
@@ -73,6 +76,8 @@ open class SYBallPulseIndicator: UIView, SYLoadingIndicator {
             indicator.frame = frame
         }
     }
+
+    // MARK: Functions
 
     private func setupUI() {
         for _ in 0 ..< indicatorCount {

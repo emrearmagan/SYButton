@@ -9,26 +9,30 @@
 import Foundation
 import UIKit
 
+/// A custom `CAGradientLayer` subclass that stores additional properties about
+/// gradient colors, locations, and direction.
 class SYGradientLayer: CAGradientLayer {
-    /// The colors of the gradient layer.
+    /// The colors used by the gradient.
+    /// Converted internally to `cgColor` and set on `CAGradientLayer.colors`.
     var gradientColors: [UIColor]? {
         didSet {
-            self.colors = self.gradientColors?.map { $0.cgColor }
+            colors = gradientColors?.map { $0.cgColor }
         }
     }
 
-    /// The locations of the gradient stops.
+    /// The locations of each color stop, mapped to `CAGradientLayer.locations`.
     var gradientLocations: [CGFloat]? {
         didSet {
-            self.locations = self.gradientLocations?.map { NSNumber(value: $0) }
+            locations = gradientLocations?.map { NSNumber(value: Float($0)) }
         }
     }
 
-    /// The direction of the gradient.
+    /// The direction in which the gradient should be drawn.
+    /// Sets `startPoint` and `endPoint` accordingly.
     var gradientDirection: SYButtonBackgroundView.GradientDirection = .leftToRight {
         didSet {
-            self.startPoint = self.gradientDirection.startPoint
-            self.endPoint = self.gradientDirection.endPoint
+            startPoint = gradientDirection.startPoint
+            endPoint = gradientDirection.endPoint
         }
     }
 }

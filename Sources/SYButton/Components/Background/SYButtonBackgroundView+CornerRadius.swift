@@ -9,13 +9,14 @@
 import Foundation
 
 extension SYButtonBackgroundView {
-    /// `CornerRadius` defines the rounding behavior for the corners of the `SYButton`.
+    /// Defines the corner-rounding behavior for `SYButtonBackgroundView`.
     public enum CornerRadius {
-        /// Rounds the button corners to form a capsule shape based on the button's height.
+        /// Rounds the corners to create a capsule shape (based on the view's height).
         case rounded
 
-        /// Applies a specific radius value to the button's corners.
-        /// - Parameter value: The radius value to be applied to the corners.
+        /// Uses a specific numeric corner radius.
+        ///
+        /// - Parameter value: The radius value to apply to each corner.
         case radius(_ value: CGFloat)
     }
 }

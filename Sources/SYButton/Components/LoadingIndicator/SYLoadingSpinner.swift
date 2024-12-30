@@ -7,15 +7,6 @@
 //
 
 import Foundation
-
-//
-//  SYLoadingSpinner.swift
-//
-//
-//  Created by Emre Armagan on 22.08.24.
-//  Copyright © 2024 Emre Armagan. All rights reserved.
-//
-
 import UIKit
 
 /// `SYLoadingSpinner` is a custom loading indicator view that displays a circular spinner using `CAShapeLayer`.

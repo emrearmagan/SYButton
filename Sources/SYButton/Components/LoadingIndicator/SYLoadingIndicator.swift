@@ -32,6 +32,7 @@ public extension SYLoadingIndicator {
     static var ballPulse: SYLoadingIndicator { SYBallPulseIndicator() }
 }
 
+/// Extend `UIActivityIndicatorView` to conform to `SYLoadingIndicator`.
 extension UIActivityIndicatorView: SYLoadingIndicator {
     /// The color of the `UIActivityIndicatorView`. This conforms to the `SYLoadingIndicator` protocol's `indicatorColor` property.
     public var indicatorColor: UIColor {

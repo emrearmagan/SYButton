@@ -9,24 +9,25 @@
 import Foundation
 import UIKit
 
-/// `SYRippleHighlighter` is a highlighter that applies a ripple effect to an `SYButton` when it is highlighted.
+/// A `SYRippleHighlighter` highlighter  applying a “ripple” effect to an `SYButton` when highlighted.
 public class SYRippleHighlighter: NSObject, SYButtonHighlighter {
     // MARK: Properties
 
-    /// The color of the ripple effect. The default color is white with a opacitiy of 40%.
-    public var rippleColor: UIColor = .white.withAlphaComponent(0.4)
+    /// The color of the ripple effect. Default is white with 40% opacity.
+    public var rippleColor: UIColor
 
-    /// The duration of the ripple animation in seconds. The default duration is 0.5 seconds.
-    public var rippleDuration: CFTimeInterval = 0.5
+    /// The total duration (in seconds) of the ripple animation. Default is 0.5.
+    public var rippleDuration: CFTimeInterval
 
-    /// The radius of the ripple effect. If `nil`, the ripple will cover the entire button.
+    /// The radius of the ripple effect. If `nil`, it covers the entire button.
     public var rippleRadius: CGFloat?
 
-    /// A Boolean value that determines whether the ripple effect tracks the touch location.
-    /// If `true`, the ripple originates from the touch location; if `false`, it originates from the center of the button. The default value is `true`.
-    public var trackLocation: Bool = true
+    /// Whether the ripple’s origin should follow the touch location (`true`) or
+    /// stay at the button center (`false`). Default is `true`.
+    public var trackLocation: Bool
 
     private var rippleName = "rippleLayer"
+    private var highlightedLayer: CALayer?
 
     // MARK: Init
 
@@ -39,13 +40,13 @@ public class SYRippleHighlighter: NSObject, SYButtonHighlighter {
         )
     }
 
-    /// Initializes a new instance of `SYRippleHighlighter` with the specified properties.
+    /// Initializes an `SYRippleHighlighter` with the specified configuration.
     ///
     /// - Parameters:
-    ///   - rippleColor: The color of the ripple effect.
-    ///   - rippleDuration: The duration of the ripple animation.
-    ///   - rippleRadius: The radius of the ripple effect. If `nil`, the ripple will cover the entire button.
-    ///   - trackLocation: A Boolean value that determines whether the ripple effect tracks the touch location.
+    ///  - rippleColor: The color of the ripple effect.
+    ///  - rippleDuration: The animation duration for the ripple.
+    ///  - rippleRadius: The radius of the ripple. If `nil`, the ripple expands to the button’s bounds.
+    ///  - trackLocation: If `true`, the ripple originates at the finger’s location.
     public init(rippleColor: UIColor, rippleDuration: CFTimeInterval, rippleRadius: CGFloat?, trackLocation: Bool) {
         self.rippleColor = rippleColor
         self.rippleDuration = rippleDuration
@@ -53,24 +54,26 @@ public class SYRippleHighlighter: NSObject, SYButtonHighlighter {
         self.trackLocation = trackLocation
     }
 
-    private var highlightedLayer: CALayer?
-
-    // MARK: Functions
+    // MARK: SYButtonHighlighter
 
     public func highlight(_ button: SYButton, at location: CGPoint) {
-        // Create the ripple layer
         let rippleSize = rippleRadius ?? max(button.frame.width, button.frame.height)
         let rippleLayer = createRipple(with: rippleSize)
-        rippleLayer.position = trackLocation ? location : CGPoint(x: button.frame.width / 2, y: button.frame.height / 2)
-        // initally scale it down to animate the scale
+        rippleLayer.position = trackLocation
+            ? location
+            : CGPoint(x: button.frame.width / 2, y: button.frame.height / 2)
+
+        // Scale from zero
         rippleLayer.transform = CATransform3DMakeScale(0.0, 0.0, 1.0)
 
-        // Create a mask layer to contain the ripple effect within the button's bounds
+        // Mask to ensure the ripple doesn’t escape the button’s rounded corners
         let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: button.bounds, cornerRadius: button.layer.cornerRadius).cgPath
+        maskLayer.path = UIBezierPath(
+            roundedRect: button.bounds,
+            cornerRadius: button.layer.cornerRadius
+        ).cgPath
         maskLayer.frame = button.bounds
 
-        // Add ripple layer to the maskLayer
         let containerLayer = CALayer()
         containerLayer.frame = button.bounds
         containerLayer.mask = maskLayer
@@ -84,30 +87,33 @@ public class SYRippleHighlighter: NSObject, SYButtonHighlighter {
     }
 
     public func stopHighlight(_ button: SYButton) {
-        guard let ripple = highlightedLayer?.sublayers?.first(where: { $0.name == rippleName }) else { return }
+        guard let ripple = highlightedLayer?.sublayers?.first(where: { $0.name == rippleName }) else {
+            return
+        }
         highlightedLayer = nil
 
         let fadeAnimation = fadingAnimation()
-        // run the animation backwards
+        // Reverse the fade animation so it disappears quickly
         fadeAnimation.speed = -1
         fadeAnimation.delegate = self
         ripple.add(fadeAnimation, forKey: "rippleFadeOut")
     }
 }
 
-// MARK: CAAnimationDelegate
+// MARK: - CAAnimationDelegate
 
 extension SYRippleHighlighter: CAAnimationDelegate {
     public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         let layer = anim.value(forKeyPath: "animationLayer") as? CALayer
-        // remove the `highlightedLayer`
+        // Remove the highlight layer
         layer?.superlayer?.removeFromSuperlayer()
     }
 }
 
-// MARK: Helper
+// MARK: - Helpers
 
 extension SYRippleHighlighter {
+    /// Creates a circular layer of the given `radius` to serve as the ripple.
     private func createRipple(with radius: CGFloat) -> CAShapeLayer {
         let rippleLayer = CAShapeLayer()
         rippleLayer.backgroundColor = rippleColor.cgColor
@@ -117,15 +123,16 @@ extension SYRippleHighlighter {
         return rippleLayer
     }
 
+    /// Creates the ripple’s group animation combining scale & fade.
     private func createRippleAnimation() -> CAAnimation {
-        // scale animation
+        // Scale
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.fromValue = 0
         scaleAnimation.toValue = 1
         scaleAnimation.fillMode = .forwards
         scaleAnimation.isRemovedOnCompletion = false
 
-        // fade animation
+        // Fade
         let fadeAnimation = fadingAnimation()
 
         let animationGroup = CAAnimationGroup()
@@ -138,12 +145,13 @@ extension SYRippleHighlighter {
         return animationGroup
     }
 
+    /// Creates a fade-in animation used for the ripple effect.
     private func fadingAnimation() -> CAAnimation {
         let fadeAnimation = CABasicAnimation(keyPath: "opacity")
         fadeAnimation.fromValue = 0
         fadeAnimation.toValue = 1
-        fadeAnimation.isRemovedOnCompletion = false
         fadeAnimation.fillMode = .forwards
+        fadeAnimation.isRemovedOnCompletion = false
         fadeAnimation.duration = rippleDuration
         return fadeAnimation
     }
