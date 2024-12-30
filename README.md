@@ -4,20 +4,21 @@
 # SYButton
 </div>
 
-![Platform](https://img.shields.io/badge/platform-ios-lightgray.svg)
+![Platform](https://img.shields.io/badge/platform-iOS-lightgray.svg)
 ![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)
-![iOS 13.0+](https://img.shields.io/badge/iOS-12.0%2B-blue.svg)
+![iOS 12.0+](https://img.shields.io/badge/iOS-12.0%2B-blue.svg)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-SYButton is a yet another simple but customizable and button. With support for dynamic styling, highlighters, and loading states.
-<div>
-<br>
+**SYButton** is a lightweight, highly customizable iOS button that supports dynamic styling, highlight effects, and loading states.
+
 <div align="center">
-<img src="./docs/overview.png" alt="Overview">
+  <img src="./docs/overview.png" alt="Overview">
 </div>
+---
 
 ## Usage
-#### Basic Usage
+
+##### Basic Usage
 
 To create and display a basic SYButton:
 
@@ -33,25 +34,31 @@ view.addSubview(button)
 
 ##### Customizing the Button
 You can customize the appearance and behavior of the button:
+
 ```swift
 button.icon = IconSource(image: UIImage(systemName: "heart.fill"), tintColor: .red)
 button.cornerRadius = .radius(8)
 button.imagePlacement = .leading
 button.contentInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+
+// You can also apply a gradient background if desired:
+button.backgroundView.gradientColor = [.systemBlue, .systemGreen]
 ```
 
 ##### Loading State
-
 <div>
   <img src="./docs/loading.gif" alt="loading.gif">
 </div>
 
 The `SYButton` offers a way to indicate a loading state, which is particularly useful for scenarios such as network requests or other asynchronous tasks. When the button enters the loading state, it can display a loading indicator in place of the icon, and the title can be updated to reflect the ongoing process.
+
 ```swift
 button.setLoading(true, with: "Loading...")
 // or simply
 button.isLoading = true
 ```
+###### Custom Loading Indicators
+
 `SYButton` comes with several built-in loading indicators that you can use to customize the loading state:
 - `SYLoadingSpinner`: A simple and clean spinner that is the default loading indicator for `SYButton`.
 - `SYBallPulseIndicator`: A loading indicator that displays three pulsing balls.
@@ -93,6 +100,7 @@ class CustomLoadingIndicator: UIView, SYLoadingIndicator {
 }
 
 ...
+
 button.activityIndicator = CustomLoadingIndicator()
 ```
 
