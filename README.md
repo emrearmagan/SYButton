@@ -11,6 +11,8 @@
 
 **SYButton** is a lightweight, highly customizable iOS button that supports dynamic styling, highlight effects, and loading states.
 
+[📖 Documentation](https://emrearmagan.github.io/SYButton/)
+
 <div align="center">
   <img src="./docs/overview.png" alt="Overview">
 </div>
